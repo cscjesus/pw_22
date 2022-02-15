@@ -1,0 +1,21 @@
+#miDiv{
+  width: 200px;
+  height: 200px;
+  background-color: beige;
+}
+input[type='text']{
+  width: 50px;
+  background-color: yellowgreen;
+  font-size: 20px;
+  border: 2px blue solid;
+  display: block;
+}
+#degradado{
+  width: 200px;
+  height: 200px;
+  border: 4px red double;
+  background: -webkit-linear-gradient(right,#fb0,#f50);
+}
+#miParrafo:first-letter{
+  font-size: 40px;
+}

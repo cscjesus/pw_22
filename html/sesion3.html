@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sesion 3</title>
+</head>
+<body>
+  <div>
+
+    <fieldset>
+      <legend>Mi primer conjuno de campos</legend>
+      <h1>Hola mundo</h1>
+      <p>Este es un fieldset que contiene un h1</p>
+      <p>Otro parrafo de texto dentro del fielset</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Datos de contacto</legend>
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" autofocus placeholder="Solo nombre"
+      required>
+
+      <br>
+
+      <label for="txtApellido">Apellido: </label>
+      <input type="text" name="txtApellido" id="txtApellido" required placeholder="Dos apellidos">
+
+      <br>
+
+      <label for="txtCorreo">Correo:</label>
+      <input type="email" name="txtCorreo" id="txtCorreo" placeholder="ejemplo@abc.com">
+
+      <br>
+
+      <label for="txtFechaHora">Seleccione fecha y hora</label>
+      <input type="datetime-local" id="txtFechaHora">
+      
+      <br>
+
+      <label for="txtFecha">Seleccione una fecha</label>
+      <input type="date" name="txtFecha" id="txtFecha">
+
+      <br>
+
+      <label for="txtHora">Seleccione una hora:</label>
+      <input type="time" name="txtHora" id="txtHora">
+
+      <br>
+
+      <label for="txtNumero">Seleccione una cantidad:</label>
+      <input type="number" name="txtNumero" id="txtNumero" step="0.5" min="0" max="100">
+
+      <br>
+
+      <label for="color">Seleccione un color:</label>
+      <input type="color" name="color" id="color">
+
+      <br>
+
+      <label for="txtLista">Selecione una cantidad a donar</label>
+      <input type="text" name="txtLista" id="txtLista" list="lista">
+      <datalist id="lista">
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+      </datalist>
+      
+    </fieldset>
+
+
+  </div>
+</body>
+</html>

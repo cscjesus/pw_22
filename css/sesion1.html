@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sesión 1 css</title>
+  <style>
+    #div1{
+      width: 200px;
+      height: 150px;
+    }
+    #div2{
+      width: 300px;
+      height: 100px;
+      margin: auto;
+    }
+    p{
+      font-size: 20px;
+      font-weight: bold;
+      color: red;
+      border-bottom: aqua 2px dashed;
+      /* border: aqua 2px dashed; */
+    }
+    #parr{
+      color: green;
+      font-size: 12px;
+      border-bottom: pink 4px dotted;
+    }
+    .et1{
+      color: lightblue;
+      background: black;
+      width: 100px;
+      display: block;
+    }
+    /*Cambiar el fondo y el tipo de puntero en las label*/
+    .et1:hover{
+      background: yellow;
+      cursor: pointer;
+    }
+    #txtEntrada{
+      border: brown 4px dashed;
+    }
+    #txtEntrada:hover{
+      background-color: darkorange;
+    }
+    #txtEntrada:focus{
+      background-color: cadetblue;
+    }
+  </style>
+</head>
+<body>
+  <div id="div1" style="background: lightgray;">
+    Contenido del primer div
+  </div>
+
+  <div id="div2" style="background: lightgray;">
+    <p>
+      Texto formateado
+    </p>
+    <p id="parr">
+      otro párrafo formateado
+    </p>
+  </div>
+
+  <label class="et1">Etiqueta 1</label>
+  <label class="et1">Etiqueta 2</label>
+  <label class="et1">Etiqueta 3</label>
+  <label class="et1">Etiqueta 4</label>
+
+  <input type="text" id="txtEntrada">
+</body>
+</html>

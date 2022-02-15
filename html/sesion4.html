@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sesion 4</title>
+</head>
+
+<body>
+  <form action="" method="get">
+    <fieldset>
+      <legend>Información personal</legend>
+      <p>Nombre: <input type="text" required></p>
+      <p>Número de teléfono: <input type="tel" 
+        required pattern="(276)-[0-9]{3}-[0-9]{4}"
+          title="Formato region Libres 276-XXX-XXXX"> </p>
+      <p>Email: <input type="email"></p>
+      <p>Fecha de nacimiento: <input type="date"></p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Razón de la cita</legend>
+      <p>¿Cuál es la razón de su visita?</p>
+      <datalist id="razones">
+        <option>Revision anual</option>
+        <option>Gripe</option>
+        <option>Prueba de sangre</option>
+        <option>Post operacion</option>
+        <option>Otra</option>
+      </datalist>
+      <input type="text" list="razones">
+      <p>Nivel de dolor: <input type="range" min="0"
+        max="10" step="0.5" value="5"></p>
+      <p>Fecha de preferencia: <input type="date"></p>
+      <p>Hora de preferencia: <input type="time"></p>
+    </fieldset>
+    <input type="submit" value="enviar">
+
+  </form>
+</body>
+
+</html>
