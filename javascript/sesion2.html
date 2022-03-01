@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,54 @@
   <link rel="stylesheet" href="../libcss/bootstrap.css">
   <script src="../libjs/jquery-3.1.1.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  
+  <script>
+    function operaciones() {
+      var op = document.getElementById('op').value;
+      var a = document.getElementById('n1').value;
+      var b = document.getElementById('n2').value;
+      a = parseInt(a, 10);
+      b = parseInt(b, 10);
+      switch (op) {
+        case "+":
+          var s = a + b;
+          swal(a.toString() + " + " + b.toString() + " = " + s.toString());
+
+          break;
+      }
+      document.getElementById('op').value = 'd';
+      //swal();
+    }
+  </script>
 </head>
+
 <body>
-  
+  <div class="container">
+    <div class="row">
+      <div class="input-group-sm">
+        <div class="alert alert-primary">
+          Sentencias de selección
+        </div>
+        <label for="n1">
+          Num 1:
+        </label>
+        <input type="text" class="form-control" id="n1">
+
+        <label for="n2">
+          Num 2:
+        </label>
+        <input type="text" class="form-control" id="n2">
+      </div>
+
+      <select id="op" class="form-control" onchange="operaciones();">
+        <option value="d">Seleccione una operación:</option>
+        <option value="+">Suma</option>
+        <option value="-">Resta</option>
+        <option value="*">Producto</option>
+        <option value="/">Division</option>
+      </select>
+    </div>
+
+  </div>
 </body>
+
 </html>
