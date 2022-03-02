@@ -32,11 +32,36 @@
 
 <body>
   <div class="container">
-    <div class="row">
+    <!-- <div class="row">
       <div class="input-group-sm">
         <div class="alert alert-primary">
           Sentencias de selección
         </div>
+        <label for="n1">
+          Num 1:
+        </label>
+        <input type="text" class="form-control" id="n1">
+  
+        <label for="n2">
+          Num 2:
+        </label>
+        <input type="text" class="form-control" id="n2">
+      </div>
+  
+      <select id="op" class="form-control" onchange="operaciones();">
+        <option value="d">Seleccione una operación:</option>
+        <option value="+">Suma</option>
+        <option value="-">Resta</option>
+        <option value="*">Producto</option>
+        <option value="/">Division</option>
+      </select>
+    </div> -->
+    
+    <div class="card">
+      <div class="card-header">
+        Sentencias de selección
+      </div>
+      <div class="card-body">
         <label for="n1">
           Num 1:
         </label>
@@ -47,7 +72,7 @@
         </label>
         <input type="text" class="form-control" id="n2">
       </div>
-
+    <div class="input-group-sm mb-3" style="margin:auto">
       <select id="op" class="form-control" onchange="operaciones();">
         <option value="d">Seleccione una operación:</option>
         <option value="+">Suma</option>
@@ -55,7 +80,13 @@
         <option value="*">Producto</option>
         <option value="/">Division</option>
       </select>
+
     </div>
+
+    </div>
+  </div>
+
+  
 
   </div>
 </body>
