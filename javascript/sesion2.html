@@ -21,11 +21,36 @@
         case "+":
           var s = a + b;
           swal(a.toString() + " + " + b.toString() + " = " + s.toString());
-
+          break;
+        case "-":
+          var s = a - b;
+          swal(a.toString() + " - " + b.toString() + " = " + s.toString());
+          break;
+        case "*":
+          var s = a * b;
+          swal(a.toString() + " * " + b.toString() + " = " + s.toString());
+          break;
+        case "/":
+          if (b == 0) {
+            swal("No hay division con cero");
+          } else {
+            var s = a / b;
+            swal(a.toString() + " / " + b.toString() + " = " + s.toString());
+          }
           break;
       }
       document.getElementById('op').value = 'd';
+      document.getElementById('n1').value = "";
+      document.getElementById('n2').value = "";
       //swal();
+    }
+    function multiplicar(){
+      var tabla = document.getElementById('tabla').value;
+      var pizarra = document.getElementById('resultado');
+      for(i=0;i<=10;i++)
+        pizarra.innerHTML += i +"*" + tabla+"<br>";
+        //alert(i +"*" + tabla);
+
     }
   </script>
 </head>
@@ -56,7 +81,7 @@
         <option value="/">Division</option>
       </select>
     </div> -->
-    
+
     <div class="card">
       <div class="card-header">
         Sentencias de selección
@@ -72,22 +97,39 @@
         </label>
         <input type="text" class="form-control" id="n2">
       </div>
-    <div class="input-group-sm mb-3" style="margin:auto">
-      <select id="op" class="form-control" onchange="operaciones();">
-        <option value="d">Seleccione una operación:</option>
-        <option value="+">Suma</option>
-        <option value="-">Resta</option>
-        <option value="*">Producto</option>
-        <option value="/">Division</option>
-      </select>
+      <div class="input-group-sm mb-3" style="margin:auto">
+        <select id="op" class="form-control" onchange="operaciones();">
+          <option value="d">Seleccione una operación:</option>
+          <option value="+">Suma</option>
+          <option value="-">Resta</option>
+          <option value="*">Producto</option>
+          <option value="/">Division</option>
+        </select>
 
-    </div>
+      </div>
 
     </div>
   </div>
 
-  
+  <div class="card">
+    <div class="card-header">
+      Sentencia for
+    </div>
+    <div class="card-body">
+      <label>Escriba la tabla de multipilicación que quiera:
+        <input type="text" id="tabla" class="form-control">
+      </label>
+      <button class="btn btn-primary" onclick="multiplicar()">
+        Ejecutar
+      </button>
+      <label class="form-control" id="resultado">
 
+      </label>
+    </div>
+  </div>
+  <!--
+   investigar: moda, mediana, promedio, desv. estandar, varianza 
+  -->
   </div>
 </body>
 
