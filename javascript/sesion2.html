@@ -44,13 +44,45 @@
       document.getElementById('n2').value = "";
       //swal();
     }
-    function multiplicar(){
+
+    function multiplicar() {
       var tabla = document.getElementById('tabla').value;
       var pizarra = document.getElementById('resultado');
-      for(i=0;i<=10;i++)
-        pizarra.innerHTML += i +"*" + tabla+"<br>";
-        //alert(i +"*" + tabla);
+      pizarra.innerHTML = "";
+      for (i = 0; i <= 10; i++) {
+        pizarra.innerHTML += tabla + "*" + i + '=' + tabla * i + "<br>";
+      }
+      pizarra.style.width = "120px";
+      pizarra.style.height = "300px";
+      //alert(i +"*" + tabla);
+    }
 
+    function procesar() {
+      var text = document.getElementById('txtNumeros').value;
+      var nums = text.split(',');
+
+      var msg = '';
+      for (i = 0; i < nums.length; i++)
+        msg += nums[i] + '<br>';
+
+      //convertir los numeros guardados como string a enteros
+      
+      var numeros = nums.map(
+      function(n){
+        return parseInt(n,10);
+      });
+      //el arreglo numeros tiene los mismos elementos que nums solo que son
+      //de tipo entero
+      //hallar promedio, mediana, moda , desv. estandar, varianza 
+      var suma = 0;
+      for(i=0;i<numeros.length;i++){
+        suma += numeros[i];
+      }
+      suma = suma/numeros.length;
+      msg='Promedio: '+suma;
+      
+      document.getElementById('res').innerHTML = msg;
+      //revision de programa martes y miercoles
     }
   </script>
 </head>
@@ -130,6 +162,24 @@
   <!--
    investigar: moda, mediana, promedio, desv. estandar, varianza 
   -->
+  <div class="card m-5">
+    <div class="card-header">
+      Promedio, moda, mediana, Varianza y Desviación estándar
+    </div>
+    <div class="card-body">
+
+      <input type="text" id="txtNumeros" class="form-control">
+
+      <button class="btn btn-primary" onclick="procesar()">
+        Procesar
+      </button>
+
+      <label class="form-control" id="res">
+
+      </label>
+    </div>
+  </div>
+
   </div>
 </body>
 
