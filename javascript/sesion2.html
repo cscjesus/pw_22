@@ -56,31 +56,53 @@
       pizarra.style.height = "300px";
       //alert(i +"*" + tabla);
     }
-
+    //ECMAScript 6 introduced the let statement.
+    //let y var en javascript
     function procesar() {
-      var text = document.getElementById('txtNumeros').value;
-      var nums = text.split(',');
+      let text = document.getElementById('txtNumeros').value;
+      let nums = text.split(',');
 
-      var msg = '';
+      let msg = '';
       for (i = 0; i < nums.length; i++)
         msg += nums[i] + '<br>';
 
       //convertir los numeros guardados como string a enteros
-      
-      var numeros = nums.map(
-      function(n){
-        return parseInt(n,10);
-      });
+
+      let numeros = nums.map(
+        function (n) {
+          return parseInt(n, 10);
+        });
       //el arreglo numeros tiene los mismos elementos que nums solo que son
       //de tipo entero
       //hallar promedio, mediana, moda , desv. estandar, varianza 
-      var suma = 0;
-      for(i=0;i<numeros.length;i++){
+      let suma = 0;
+      for (i = 0; i < numeros.length; i++) {
         suma += numeros[i];
       }
-      suma = suma/numeros.length;
-      msg='Promedio: '+suma;
-      
+      suma = suma / numeros.length;
+      msg = 'Promedio: ' + suma;
+
+      numeros.sort(); //ordena numeros de menor a mayor
+
+      /*numeros.forEach(function (element) {
+        alert(element);
+      });*/
+      numeros.forEach((element) => {
+        alert(element);
+      });
+      /*numeros.forEach(imprime);
+      function imprime(element){
+        alert(element);
+      }*/
+      //funcion con nombre
+      //function nombre(argumentos){ }
+      //funcion anomina
+      //function (argumentos){ }
+      //funcion lambda
+      //(argumentos)=>{ }
+
+      msg += "<br>" + numeros.toString();
+
       document.getElementById('res').innerHTML = msg;
       //revision de programa martes y miercoles
     }
@@ -164,7 +186,7 @@
   -->
   <div class="card m-5">
     <div class="card-header">
-      Promedio, moda, mediana, Varianza y Desviación estándar
+      Promedio, mediana, moda, Varianza y Desviación estándar
     </div>
     <div class="card-body">
 
