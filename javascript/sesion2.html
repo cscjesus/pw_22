@@ -87,9 +87,22 @@
       /*numeros.forEach(function (element) {
         alert(element);
       });*/
-      numeros.forEach((element) => {
+      /*numeros.forEach((element) => {
         alert(element);
-      });
+      });*/
+      /***Calcular la moda**/
+      var numsCon = [];
+      var numAnt =0;
+      //guardar los numeros que no se repiten en una matriz
+      for(i=0;i<numeros.length;i++){
+        var numAct = numeros[i];
+        if(i==0){
+          numsCon.push([numAct,0]);
+        }else if(numAnt!=numAct){
+          numsCon.push([numAct,0]);
+        }
+        numAnt = numAct;
+      }
       /*numeros.forEach(imprime);
       function imprime(element){
         alert(element);
