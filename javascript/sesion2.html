@@ -82,7 +82,12 @@
       suma = suma / numeros.length;
       msg = 'Promedio: ' + suma;
 
-      numeros.sort(); //ordena numeros de menor a mayor
+      numeros.sort((a, b) => {
+        if (a == b)
+          return 0;
+        else
+          return a < b ? 1 : -1;
+      }); //ordena numeros de menor a mayor
 
       /*numeros.forEach(function (element) {
         alert(element);
@@ -125,30 +130,30 @@
       let max = numsCon[0];
       let moda = "";
       numsCon.forEach(a => {
-        if(max[1]==a[1]){
-          moda+= "Moda: " +a[0]+" se repite "+a[1]+"<br>";
+        if (max[1] == a[1]) {
+          moda += "Moda: " + a[0] + " se repite " + a[1] + "<br>";
         }
-    });
-    // (a[1]<b[1])?1:-1; 
-    // if(a[1]<b[1])
-    //   return 1;
-    // else
-    //   return -1;
-    /*numeros.forEach(imprime);
-    function imprime(element){
-      alert(element);
-    }*/
-    //funcion con nombre
-    //function nombre(argumentos){ }
-    //funcion anomina
-    //function (argumentos){ }
-    //funcion lambda
-    //(argumentos)=>{ }
+      });
+      // (a[1]<b[1])?1:-1; 
+      // if(a[1]<b[1])
+      //   return 1;
+      // else
+      //   return -1;
+      /*numeros.forEach(imprime);
+      function imprime(element){
+        alert(element);
+      }*/
+      //funcion con nombre
+      //function nombre(argumentos){ }
+      //funcion anomina
+      //function (argumentos){ }
+      //funcion lambda
+      //(argumentos)=>{ }
 
-    msg += "<br>" + numeros.toString();
-    msg+="<br>";
-    msg +=moda;
-    document.getElementById('res').innerHTML = msg;
+      msg += "<br>" + numeros.toString();
+      msg += "<br>";
+      msg += moda;
+      document.getElementById('res').innerHTML = msg;
       //revision de programa martes y miercoles
     }
   </script>
