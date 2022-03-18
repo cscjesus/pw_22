@@ -1,10 +1,18 @@
 function decorar(){
     let parrafo = document.getElementById('texto');
-    parrafo.style.textDecoration = 'underline';
+    let estatus =parrafo.style.textDecoration;
+    if(estatus=='underline')
+        parrafo.style.textDecoration='none';
+    else
+        parrafo.style.textDecoration = 'underline';
 }
 function negrita(){
     let parrafo = document.getElementById('texto');
-    parrafo.style.fontWeight ='bold';
+    let estatus = parrafo.style.fontWeight;
+    if(estatus=='normal')
+        parrafo.style.fontWeight ='bold';
+    else
+        parrafo.style.fontWeight ='normal';
 }
 function cambiarSize(){
     let parrafo = document.getElementById('texto');
