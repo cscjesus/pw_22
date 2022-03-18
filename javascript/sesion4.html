@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesion4 js</title>
+    <script>
+        //funcion if
+        let a = 1;
+        if(a>10)
+            document.write(a +" es mayor que 10");
+        else
+            document.write(a+ " es menor que 10");
+        //funcion switch
+        //asumir que la variable guarda dato del usuario
+        let page ='Home';
+        page = page.toLowerCase();
+        switch(page){
+            case'home':
+                document.write("Selecciono home");
+            break;
+            case'about':
+                document.write("Selecciono about");
+            break;
+            case'news':
+                document.write("Selecciono news");
+            break;
+           
+            default:
+                document.write("No seleccino nada");
+        }
+        //funcion ?: operador ternario
+        let mensaje = a<=5 ? "<br>a es menor o igual a 5":"<br>a es mayor que 5";
+       
+        if(a<=5)
+            mensaje = "<br>a es menor o igual a 5";
+        else
+            mensaje = "<br>a es mayor que 5";
+
+        document.write(mensaje);
+        document.write("<br>");
+        //uso de while
+        let i =0;
+        while(i<5){
+            document.write("Contador: "+i+"<br>");
+            i++;
+        }
+        //uso de do-while
+        document.write("<br>");
+        i =0;
+        do{
+            document.write(i +" veces 7 es " + i*7+'<br>');
+            ++i;
+        }while(i<=7);
+        //algo de arreglos
+        let arr = new Array();
+        //arr =[];//forma tradicional
+        //asignar elementos
+        arr.push("hola");
+        arr.push("mundo");
+        //forma tradional
+        //arr[0]="hola";
+        //arr[1]="mundo";
+        document.write("<br>");
+        for(i=0;i<arr.length;i++){
+            document.write(arr[i]+"<br>");
+        }
+        //arreglos asociativos
+        balls={
+            "golf":"Golf balls, 6",
+            "tennis":"Tennis balls, 3",
+            "soccer":"Soccer ball, 1",
+            "ping":"Ping balls, 1 doz",
+        };
+        document.write("<br>");
+        for(ball in balls){
+            document.write(ball+" = "+balls[ball]+"<br>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
