@@ -25,31 +25,65 @@
                 // $("#btnBorde").click(function(){
                 //     alert('hola mundo');
                 // });
-                $("#btnBorde").click(()=>{
+                $("#btnBorde").click(() => {
                     //alert('hola mundo');
-                    $('#miDiv').css('border',"2px solid red");
+                    $('#miDiv').css('border', "2px solid red");
                     $('#miDiv').html("Ha hecho click en btnBorde");
 
                 });
+                $('#primero').focus();
+                $('input').focus(function () {
+                    $(this).css('background', '#ff0');
+                });
+                $('input').blur(function () {
+                    $(this).css('background', '#aaa');
+                });
+            }
+        );
+        
+        $(document).keypress(
+            function(e){
+                let resultado = $('#resultado').text();
+                $('#resultado').text(resultado+
+                String.fromCharCode(e.which));
             }
         );
     </script>
 </head>
 
 <body>
-<!-- <p id="parrafo" class="form-control">Texto</p> -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-2">
-            <button id="btnBorde" class="btn btn-danger">
-                Agregar borde
-            </button>
+    <!-- <p id="parrafo" class="form-control">Texto</p> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <button id="btnBorde" class="btn btn-danger">
+                    Agregar borde
+                </button>
+            </div>
+            <div class="col-md-10">
+                <div id="miDiv">jQuery</div>
+            </div>
         </div>
-        <div class="col-md-10">
-            <div id="miDiv">jQuery</div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" id="primero">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+            </div>
+        </div>
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    Presione algunas teclas
+                </div>
+                <div class="card-body">
+                    <label id="resultado" class="form-control">
+                    </label>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 </body>
 
 </html>
