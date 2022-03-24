@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../libjs/jquery-3.1.1.min.js"></script>
+    <style>
+        .estilo {
+            background-color: lightpink;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        $(document).ready(() => {
+            $('#btnTest').click(() => $('#parrafo').text('Esto es un <b>texto</b>'));
+            $('#btnHtml').click(() => $('#parrafo').html('Esto es un <b>texto</b>'));
+            $('#btnEliminar').click(() => $('#parrafo').remove());
+            $('#btnAgregar').click(() => {
+                //agregar una linea antes del parrafo
+                $('#parrafo').before('<hr>');
+                //agregar una linea despues del parrafo
+                $('#parrafo').after('<hr>');
+                //agregar un boton despues del parrafo y la linea
+                $('#parrafo').after('<button id="btnHola">hola</button>');
+                $('#btnHola').on('click', () => alert('hola'));
+
+            });
+        });
+    </script>
+    <title>Sesion 2 jquery</title>
+</head>
+
+<body>
+    <input type="button" value="text" id="btnTest">
+    <input type="button" value="html" id="btnHtml">
+    <button id="btnEliminar">Eliminar parrafo</button>
+    <button id="btnAgregar">Agregar</button>
+    <button id="btnAgregarEstilo">agregar estilo</button>
+    <button id="btnQuitarEstilo">Quitar estilo</button>
+
+    <p id="parrafo"></p>
+    <div id="miDiv">
+        Esto es un div
+    </div>
+</body>
+
+</html>
