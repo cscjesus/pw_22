@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../libcss/bootstrap.css">
+    <script src="../libjs/jquery-3.1.1.min.js"></script>
+    <script>
+        // $(document).ready(
+        //function(){
+        //     alert('hola mundo jquery');
+        // });
+        $(document).ready(
+            () => {
+                //alert('hola mundo jquery');
+                //let p = document.getElementById('id');
+                //metodo val es para input
+                //metodo text es para label, parrafo
+                // $('#parrafo').text('Esto es un texto desde jquery');
+                // $('#parrafo').css('font-size','40px');
+                // $('#parrafo').css('color','#45fe12');
+                // $("#btnBorde").click(function(){
+                //     alert('hola mundo');
+                // });
+                $("#btnBorde").click(() => {
+                    //alert('hola mundo');
+                    $('#miDiv').css('border', "2px solid red");
+                    $('#miDiv').html("Ha hecho click en btnBorde");
+
+                });
+                $('#primero').focus();
+                $('input').focus(function () {
+                    $(this).css('background', '#ff0');
+                });
+                $('input').blur(function () {
+                    $(this).css('background', '#aaa');
+                });
+            }
+        );
+        
+        $(document).keypress(
+            function(e){
+                let resultado = $('#resultado').text();
+                $('#resultado').text(resultado+
+                String.fromCharCode(e.which));
+            }
+        );
+    </script>
+</head>
+
+<body>
+    <!-- <p id="parrafo" class="form-control">Texto</p> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <button id="btnBorde" class="btn btn-danger">
+                    Agregar borde
+                </button>
+            </div>
+            <div class="col-md-10">
+                <div id="miDiv">jQuery</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" id="primero">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+            </div>
+        </div>
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    Presione algunas teclas
+                </div>
+                <div class="card-body">
+                    <label id="resultado" class="form-control">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

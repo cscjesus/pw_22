@@ -82,14 +82,63 @@
       suma = suma / numeros.length;
       msg = 'Promedio: ' + suma;
 
-      numeros.sort(); //ordena numeros de menor a mayor
+      numeros.sort((a, b) => {
+        if (a == b)
+          return 0;
+        else
+          return a < b ? 1 : -1;
+      }); //ordena numeros de menor a mayor
 
       /*numeros.forEach(function (element) {
         alert(element);
       });*/
-      numeros.forEach((element) => {
+      /*numeros.forEach((element) => {
         alert(element);
+      });*/
+      /***Calcular la moda**/
+      var numsCon = [];
+      var numAnt = 0;
+      //guardar los numeros que no se repiten en una matriz
+      for (i = 0; i < numeros.length; i++) {
+        var numAct = numeros[i];
+        if (i == 0) {
+          numsCon.push([numAct, 0]);
+        } else if (numAnt != numAct) {
+          numsCon.push([numAct, 0]);
+        }
+        numAnt = numAct;
+      }
+      //contar el numero de veces que se repite el numero
+      for (i = 0; i < numeros.length; i++) {
+        let numAct = numeros[i];
+        for (j = 0; j < numsCon.length; j++) {
+          if (numAct == numsCon[j][0]) {
+            numsCon[j][1] += 1;
+            continue;
+          }
+        }
+      }
+      //ordenar por la segunda columna (columna 1) la matriz
+      numsCon.sort((a, b) => {
+        if (a[1] == b[1]) {
+          return 0;
+        } else {
+          return (a[1] < b[1]) ? 1 : -1;
+        }
       });
+      //mostrar la moda al usuario
+      let max = numsCon[0];
+      let moda = "";
+      numsCon.forEach(a => {
+        if (max[1] == a[1]) {
+          moda += "Moda: " + a[0] + " se repite " + a[1] + "<br>";
+        }
+      });
+      // (a[1]<b[1])?1:-1; 
+      // if(a[1]<b[1])
+      //   return 1;
+      // else
+      //   return -1;
       /*numeros.forEach(imprime);
       function imprime(element){
         alert(element);
@@ -102,7 +151,8 @@
       //(argumentos)=>{ }
 
       msg += "<br>" + numeros.toString();
-
+      msg += "<br>";
+      msg += moda;
       document.getElementById('res').innerHTML = msg;
       //revision de programa martes y miercoles
     }
