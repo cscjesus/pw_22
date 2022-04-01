@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../libjs/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="../libcss/bootstrap.css">
+    <script>
+        $(document).ready(()=>{
+            //leer metodos POST,GET,PUT,DELETE
+            $('#btnLeer').click(function(){
+
+                $.ajax({
+                    url:'sesion3.php',method:'GET',
+                    success:function(data){
+                        $('#pizarra').html(data);
+                    }
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <button id="btnLeer" class="btn btn-info">Leer texto</button>
+            </div>
+            <div class="col-md-6">
+                <button id="bntEscribir" class="btn btn-success">Enviar texto</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="color-md-4">
+                <label id="pizarra" class="form-control"></label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
