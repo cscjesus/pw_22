@@ -1,0 +1,15 @@
+Realizar un formulario de contacto utilizando Bootstrap y jquery
+
+Debe tener:
+    nombre (text)
+    correo (email)
+    asunto (text)
+    mensaje (textarea)
+
+enviar(boton):
+al presionar validar que los campos esten llenos y mostrar el mensaje "enviado" y borrar todos los campos, de lo contrario; mostrar los campos que no se han llenado.
+
+reset(boton)
+al presionar borrar el contenido de todos los campos
+
+Examen miercoles 30 de marzo
