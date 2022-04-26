@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +9,38 @@
     <script src="../libjs/jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" href="../libcss/bootstrap.css">
     <script>
-        $(document).ready(()=>{
+        $(document).ready(() => {
             //leer metodos POST,GET,PUT,DELETE
-            $('#btnLeer').click(function(){
-
+            //leer datos
+            $('#btnLeer').click(() => {
                 $.ajax({
-                    url:'sesion3.php',method:'GET',
-                    success:function(data){
+                    url: 'sesion3.php', method: 'GET',
+                    success: function (data) {
+                        $('#pizarra').html(data);
+                    },
+                    error:function(jqXHR,textStatus,errorThrown){
+                        alert("error");
+                    },
+                    // beforeSend:function(antes){
+                    //     alert("antes de enviar");
+                    // }
+                });
+            });
+            //mandar datos
+            $("#bntEscribir").click(()=>{
+                $.ajax({
+                    url: 'sesion3.php', method: 'POST',
+                    data:{'nombre':$('#nom').val(),'ap':$('#apellido').val()},
+                    success: function (data) {
                         $('#pizarra').html(data);
                     }
                 });
             });
-
+            
         });
     </script>
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -30,6 +48,8 @@
                 <button id="btnLeer" class="btn btn-info">Leer texto</button>
             </div>
             <div class="col-md-6">
+                <input id="nom" class="form-control" placeholder="nombre"/>
+                <input id="apellido" class="form-control" placeholder="apellido"/>
                 <button id="bntEscribir" class="btn btn-success">Enviar texto</button>
             </div>
         </div>
@@ -40,4 +60,5 @@
         </div>
     </div>
 </body>
+
 </html>
