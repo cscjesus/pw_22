@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        const miCumple = seEnferma =>{
+            return new Promise((resolve,reject)=>{
+                // if(!seEnferma){
+                //         resolve(2);
+                //     }else{
+                //         reject(new Error('Estoy triste'));
+                //     }
+                setTimeout(()=>{
+                    if(!seEnferma){
+                        resolve(2);
+                    }else{
+                        reject(new Error('Estoy triste'));
+                    }
+                },2000);
+            });
+        };
+        //seEnferma = false
+        miCumple(false).then(result=>{
+            console.log(`Yo tengo ${result} tortas`);//se ejecuta
+        }).catch(error=>{
+            console.log(error);//no se ejecuta
+        }).finally(()=>{
+            console.log('Fiesta');//se ejecuta
+        });
+        //seEnferma = true
+        miCumple(true).then(result=>{
+            console.log(`Yo tengo ${result} tortas`);//no se ejecuta
+        }).catch(error=>{
+            console.log(error);//se ejecuta
+        }).finally(()=>{
+            console.log('Fiesta');//se ejecuta
+        });
+        */
+    </script>
+    <script>
+        const insertNum =()=>{
+            return new Promise((resolve,reject)=>{
+                const numUsuario = Number(window.prompt('Numero (1-6)'));
+                
+                const aleatorio = Math.floor(Math.random()*6+1);
+
+                if(isNaN(numUsuario)){
+                    reject(new Error('Tipo de entrada incorrecta'));
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,5 +1,5 @@
 <?php
-if(!isset($_REQUEST['nombre'])){
+if (!isset($_REQUEST['nombre'])) {
     echo 'Hola desde PHP utilizando AJAX';
     return;
 }
