@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,20 +43,134 @@
         */
     </script>
     <script>
-        const insertNum =()=>{
-            return new Promise((resolve,reject)=>{
+        /*const insertaNum = () => {
+            return new Promise((resolve, reject) => {
                 const numUsuario = Number(window.prompt('Numero (1-6)'));
-                
-                const aleatorio = Math.floor(Math.random()*6+1);
 
-                if(isNaN(numUsuario)){
+                const aleatorio = Math.floor(Math.random() * 6 + 1);
+
+                if (isNaN(numUsuario)) {
                     reject(new Error('Tipo de entrada incorrecta'));
+                }
+
+                if (numUsuario === aleatorio) {
+                    resolve({ puntos: 2, aleatorio });
+                } else if (numUsuario === aleatorio - 1 || numUsuario === aleatorio + 1) {
+                    resolve({ puntos: 1, aleatorio });
+                } else {
+                    resolve({ puntos: 0, aleatorio })
                 }
             });
         }
+        const continuarJuego = () => {
+            return new Promise((resolve) => {
+                if (window.confirm("Quiere continuar?")) {
+                    resolve(true);
+                } else {
+                    resolve(false);
+                }
+            });
+        };
+        // const suponer = () => {
+        //     insertaNum().then(result => {
+        //         alert(`Dado: ${result.aleatorio}: obtuvo ${result.puntos} puntos`);
+        //         continuarJuego()
+        //             .then(result => {
+        //                 if (result) {
+        //                     suponer();
+        //                 } else {
+        //                     alert('Termino el juego');
+        //                 }
+        //             });
+        //     }).catch(error=>alert(error));
+
+        // }
+        const suponer = async () => {
+            try {
+                const result = await insertaNum();
+                alert(`Dado: ${result.aleatorio}: obtuvo ${result.puntos} puntos`);
+                const estaContinuando = await continuarJuego();
+                if (estaContinuando)
+                    suponer();
+                else
+                    alert('Termino el juego');
+
+            } catch (error) {
+                alert(error);
+            }
+        }
+        suponer();*/
+    </script>
+    <script>
+        //tarea 3:
+        const buscarDatos = async () => {
+            //  const res = await fetch('https://restcountries.com/v3.1/alpha/mx');
+            const res = await fetch('https://restcountries.com/v3.1/all');
+            //fetch() retorna una promesa, asi que necesitamos esperar por ella
+            const pais = await res.json();
+            //res es una respuesta http, por loque se debe llamar res.json
+            console.log(pais)
+            pais.map(p => {
+                let codigo = document.createElement('label');
+                let nombre = document.createElement('label');
+
+                console.log(p.cca2 + " " + p.altSpellings[2]);
+                codigo.append(p.cca2+" ");
+                nombre.append(p.altSpellings[2])
+                // document.getElementById('pizarra').appendChild(document.createElement('br'));
+                document.getElementById('pizarra').appendChild(codigo);
+                document.getElementById('pizarra').appendChild(nombre);
+                document.getElementById('pizarra').appendChild(document.createElement('br'));
+            });
+            //  console.log(pais[0].coatOfArms.png)
+
+        };
+        // const buscarDatos = () => {
+        //     fetch('https://restcountries.com/v3.1/alpha/mx').then(
+        //         r => console.log(r.json())
+        //     );
+        // };
+        buscarDatos();
+    </script>
+    <script>
+        //tarea 4
+        /*const buscarPais = async (code) => {
+            try {
+                const res = await fetch(`https://restcountries.com/v3.1/alpha/${code}`);
+                const data = await res.json();
+                return data;
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        const buscarPaisYVecinos = async ()=>{
+            const mx = await buscarPais('mx');
+            const vecinos = await Promise.all(
+                mx[0].borders.map(border=> buscarPais(border)));
+
+            // console.log(mx[0].capital);
+            // console.log(mx);
+            console.log(vecinos);
+        }
+        buscarPaisYVecinos();*/
     </script>
 </head>
+
 <body>
-    
+    <div id="pizarra">
+
+    </div>
 </body>
+
 </html>
+
+<!-- revisar filter, map, reduce en arreglos javascript
+
+
+funcion flecha valores por defecto
+const saludo = (n='juan')=>{
+    console.log(saludo);
+}
+saludo()//salida: juan
+saludo('Jose')//salida: Jose
+-->

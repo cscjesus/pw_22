@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //https://pokeapi.co/
+        // fetch('https://pokeapi.co/api/v2/pokemon/')
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data.results);
+        // let arrayNombres =[];
+        //         data.results.forEach(e => console.log(e)
+        // arrayNombres.push(e.name);
+        //);
+        //console.log(arrayNombres);
+        //     })
+        //     .catch(error => console.log(error));
+
+        const obtenerPok = async () => {
+            try {
+                const res = await fetch('https://pokeapi.co/api/v2/pokemon/');
+                const data = await res.json();
+                // console.log(data.results);
+                // data.results.forEach(e => console.log(e));
+                //map y filter, crean un nuevo array, no como Java
+                let arrayNombres = data.results.map(poke=>poke.name);
+                let arrayNombresFil = data.results.filter(poke=>poke.name.startsWith('b'));
+                console.log(...arrayNombresFil);
+                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        obtenerPok();
+            // .then(res => res.json())
+            // .then(data => {
+            //     console.log(data.results);
+            //     data.results.forEach(e => console.log(e));
+            // })
+            // .catch(error => console.log(error));
+
+
+            //https://code.tutsplus.com/es/tutorials/how-to-use-map-filter-reduce-in-javascript--cms-26209
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
