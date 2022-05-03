@@ -5,11 +5,11 @@ class Person{
     private $apellido;
     private $edad;
     
-    function __construct($nombre,$apellido,$edad)
+    function __construct($nombre=null,$apellido=null,$edad=0)
     {
-        $this->nombre;
-        $this->apellido;
-        $this->edad;
+        $this->nombre=$nombre;
+        $this->apellido=$apellido;
+        $this->edad=$edad;
     }
     function mostrar(){
         return get_object_vars($this);
