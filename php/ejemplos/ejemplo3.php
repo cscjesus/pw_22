@@ -12,7 +12,7 @@ class Person{
         $this->edad;
     }
     function mostrar(){
-        return get_object_vars()
+        return get_object_vars($this);
     }
     /**
      * Get the value of nombre
