@@ -5,19 +5,17 @@ $pass = htmlentities(addslashes($_POST['contra']));
 $pass_cifrado = password_hash($pass, PASSWORD_DEFAULT);
 //echo $usuario . "  " . $pass_cifrado;
 try {
-    $conexion = new mysqli('localhost','root','','test');
-    if(mysqli_connect_errno()){
+    $conexion = new mysqli('localhost', 'root', '', 'test');
+    if (mysqli_connect_errno()) {
         echo 'Error al conectar';
         exit();
     }
-    $conexion->set_charset('utf8');//para aceptar acentos
-    $sql = "INSERT INTO usuarios_pass(usuario,password) VALUES(".
-    "'$usuario','$pass_cifrado')";
+    $conexion->set_charset('utf8'); //para aceptar acentos
+    $sql = "INSERT INTO usuarios_pass(usuario,password) VALUES(" .
+        "'$usuario','$pass_cifrado')";
     $resultado = $conexion->query($sql);
-    if($resultado)
-        echo"Registro satisfactorio";
-    else
-        echo"Error: ".$conexion->error;
+    echo $resultado ? "Registro satisfactorio" : "Error: " .
+        $conexion->error;
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 } finally {
@@ -27,3 +25,13 @@ try {
 
 
 //mysql -u root -p --socket=/opt/lampp/var/mysql/mysql.sock
+
+/*
+
+CREATE TABLE `usuarios_pass` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(20) NOT NULL,
+  `password` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+*/
