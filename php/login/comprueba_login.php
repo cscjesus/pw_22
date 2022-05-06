@@ -1,9 +1,6 @@
 <?php
-$usuario = htmlentities(addslashes($_POST['usu']));
-$pass = htmlentities(addslashes($_POST['contra']));
-//cifrar contrasena
-$pass_cifrado = password_hash($pass, PASSWORD_DEFAULT);
-//echo $usuario . "  " . $pass_cifrado;
+$usuario = htmlentities(addslashes($_POST['usuario']));
+$pass = htmlentities(addslashes($_POST['password']));
 try {
     $conexion = new mysqli('localhost', 'root', '', 'test');
     if (mysqli_connect_errno()) {
@@ -11,11 +8,23 @@ try {
         exit();
     }
     $conexion->set_charset('utf8'); //para aceptar acentos
-    $sql = "INSERT INTO usuarios_pass(usuario,password) VALUES(" .
-        "'$usuario','$pass_cifrado')";
+    $sql = "SELECT * FROM usuarios_pass WHERE usuario='$usuario'";
     $resultado = $conexion->query($sql);
-    echo $resultado ? "Registro satisfactorio" : "Error: " .
-        $conexion->error;
+    if($resultado->num_rows>0){
+        $existente = false;
+        while($fila = $resultado->fetch_assoc()){
+            // $fila=["id"=>1,"usuario"=>"juan","password"="klksldio98"]
+            if(password_verify($pass,$fila["password"])){
+                $existente =true;
+            }
+        }
+        if($existente)
+            echo"Sesion iniciada correctamente";//redirigir....
+        else
+            echo"Password errornea";//redirigir a login.html
+    }else{
+        echo "Error al iniciar sesion (usuario no existente)";
+    }
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 } finally {
