@@ -10,20 +10,27 @@ try {
     $conexion->set_charset('utf8'); //para aceptar acentos
     $sql = "SELECT * FROM usuarios_pass WHERE usuario='$usuario'";
     $resultado = $conexion->query($sql);
-    if($resultado->num_rows>0){
+    if ($resultado->num_rows > 0) {
         $existente = false;
-        while($fila = $resultado->fetch_assoc()){
+        while ($fila = $resultado->fetch_assoc()) {
             // $fila=["id"=>1,"usuario"=>"juan","password"="klksldio98"]
-            if(password_verify($pass,$fila["password"])){
-                $existente =true;
+            if (password_verify($pass, $fila["password"])) {
+                $existente = true;
             }
         }
-        if($existente)
-            echo"Sesion iniciada correctamente";//redirigir....
-        else
-            echo"Password errornea";//redirigir a login.html
-    }else{
-        echo "Error al iniciar sesion (usuario no existente)";
+        if ($existente) {
+            echo "Sesion iniciada correctamente"; //redirigir....
+            echo "Bienvenido(a): $usuario";
+            //utilizar una sesion para guardar el usuario logueado
+            session_start();
+            $_SESSION['usuario'] = $usuario;
+            header("location:registrados1.php");
+        } else
+            // echo"Password errornea";//redirigir a login.html
+            header("location:login.html");
+    } else {
+        header("location:login.html");
+        //echo "Error al iniciar sesion (usuario no existente)";
     }
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
