@@ -2,7 +2,7 @@
 $usuario = htmlentities(addslashes($_POST['usuario']));
 $pass = htmlentities(addslashes($_POST['password']));
 try {
-    $conexion = new mysqli('localhost', 'root', '', 'test');
+    $conexion = new mysqli('localhost', 'admin', 'Adm1n_', 'test');
     if (mysqli_connect_errno()) {
         echo 'Error al conectar';
         exit();

@@ -5,7 +5,7 @@ $pass = htmlentities(addslashes($_POST['contra']));
 $pass_cifrado = password_hash($pass, PASSWORD_DEFAULT);
 //echo $usuario . "  " . $pass_cifrado;
 try {
-    $conexion = new mysqli('localhost', 'root', '', 'test');
+    $conexion = new mysqli('localhost', 'admin', 'Adm1n_', 'test');
     if (mysqli_connect_errno()) {
         echo 'Error al conectar';
         exit();
@@ -29,9 +29,10 @@ try {
 /*
 
 CREATE TABLE `usuarios_pass` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `usuario` varchar(20) NOT NULL,
-  `password` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `password` varchar(128) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 */
