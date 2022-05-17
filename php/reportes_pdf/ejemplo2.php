@@ -22,9 +22,9 @@
             $this->Image('tec.jpg', 10, 10, 200, 300);
             $this->SetFont('Arial', 'B', 12); // Arial Bold 12  
             $this->Cell(80);  //moverse a la derecha
-            $this->Cell(30, 25, 'Listado de productos', 0, 0, 'C');
+            $this->Cell(30, 50, 'Listado de productos', 0, 0, 'C');
             //salto de linea
-            $this->Ln(30);
+            $this->Ln(50);
             $altoCelda = 6;
             $this->Cell(20, $altoCelda, 'CODIGO', 1, 0, 'C', 0);
             $this->Cell(60, $altoCelda, 'NOMBRE', 1, 0, 'C', 0);
