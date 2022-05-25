@@ -27,3 +27,4 @@ switch ($op) {
         echo 'Operacion no valida';
 }
 // saludo();
+// <!-- jhl -->

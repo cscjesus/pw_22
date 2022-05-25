@@ -23,3 +23,4 @@ function crearDegradado(){
   var lienzo = document.getElementById("degradado");
   lienzo.style.background = "linear-gradient("+color1+","+color2+")";
 }
+// <!-- jhl -->

@@ -19,3 +19,4 @@ function cambiarSize(){
     let size = document.getElementById('size').value;
     parrafo.style.fontSize =size+"px";
 }
+// <!-- jhl -->

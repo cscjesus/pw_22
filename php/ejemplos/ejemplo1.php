@@ -51,3 +51,4 @@ echo "El resultado es: $op";
 //     $op=$a-$b;
 //investigar require, require_once, include, include_once
 //https://blog.ahierro.es/archivos-y-permisos-de-usuario-en-apache-y-linux/
+// <!-- jhl -->

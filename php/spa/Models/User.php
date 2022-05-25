@@ -66,3 +66,4 @@ class User{
         where ncontrol='$this->ncontrol'";
     }
 }
+// <!-- jhl -->

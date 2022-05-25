@@ -9,3 +9,4 @@ $p->setEdad(30);
 $p->domicilio = 'Av. Ferrocarril #140';
 
 echo json_encode($p->mostrar());
+// <!-- jhl -->

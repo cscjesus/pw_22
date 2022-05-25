@@ -9,3 +9,4 @@ $ap = $_REQUEST['ap'];
 
 echo 'Informacion recibida desde una peticion AJAX<br/>';
 echo "Nombre: $nombre, apellido: $ap";
+// <!-- jhl -->
