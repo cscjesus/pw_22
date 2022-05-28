@@ -1,5 +1,6 @@
 <?php
-include_once('../../datos.php');
+// include_once('../../datos.php');
+include '../datos.php';
 class ConnectDB{
     private $host = HOST;
     private $user = USER;

@@ -1,0 +1,9 @@
+RewriteEngine on
+#Reescribir la url solicitada por el usuario
+#Entrada: clientes/NCONTROL
+#Salida: clientes.php?ncontrol=NCONTROL
+RewriteRule ^clientes/?$ clientes.php
+RewriteRule ^clientes/(\w+)/?$ clientes.php?ncontrol=$1
+
+# /clientes/ post, get
+# /clientes/id put, get, delete
