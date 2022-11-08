@@ -46,6 +46,11 @@ class ConnectDB{
         $resultado = $this->conn->query($sql);
         if($resultado){
             $salida = $resultado->fetch_all(MYSQLI_ASSOC);
+            // $output = array();
+            // $i=0;
+            // while ($row = mysqli_fetch_row($resultado)) {
+            //    $output[$i++] =  array("ncontrol"=>$row[0],"name"=>$row[1] );
+            // }
             return $salida;
         }else{
             echo"Error: ".$this->conn->error;

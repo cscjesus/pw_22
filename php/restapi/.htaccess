@@ -7,3 +7,8 @@ RewriteRule ^clientes/(\w+)/?$ clientes.php?ncontrol=$1
 
 # /clientes/ post, get
 # /clientes/id put, get, delete
+
+# si no funciona, activar el modulo
+# sudo a2enmod rewrite
+# reiniciar apache2
+# sudo service apache2 restart

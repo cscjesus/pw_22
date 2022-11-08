@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".upload").on('click', function () {
+                var formData = new FormData();
+                var files = $('#image')[0].files[0];
+                formData.append('file', files);
+                $.ajax({
+                    url: 'upload.php',
+                    type: 'post',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        console.log(response);
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form method="post" action="#" enctype="multipart/form-data">
+        <div class="card" style="width: 18rem;">
+            <input type="file" class="form-control-file" name="image" id="image">
+            <input type="button" class="btn btn-primary upload" value="Subir">
+        </div>
+        </div>
+    </form>
+</body>
+
+</html>

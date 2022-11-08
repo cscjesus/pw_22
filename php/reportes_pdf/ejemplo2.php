@@ -19,7 +19,7 @@
         {
             //logo
             // $this->Image('fondo.png', 10, 10, 200, 100);
-            $this->Image('tec.jpg', 10, 10, 200, 300);
+            // $this->Image('tec.jpg', 10, 10, 200, 300);
             $this->SetFont('Arial', 'B', 12); // Arial Bold 12  
             $this->Cell(80);  //moverse a la derecha
             $this->Cell(30, 50, 'Listado de productos', 0, 0, 'C');

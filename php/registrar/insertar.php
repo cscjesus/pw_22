@@ -5,7 +5,7 @@ $pass = htmlentities(addslashes($_POST['contra']));
 $pass_cifrado = password_hash($pass, PASSWORD_DEFAULT);
 //echo $usuario . "  " . $pass_cifrado;
 try {
-    $conexion = new mysqli('localhost', 'admin', 'Adm1n_', 'test');
+    $conexion = new mysqli('localhost', 'admin', '9hmV7ue2wkqfXd5', 'test');
     if (mysqli_connect_errno()) {
         echo 'Error al conectar';
         exit();
